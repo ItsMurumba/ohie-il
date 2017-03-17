@@ -21,7 +21,6 @@ RUN apt-get -y install software-properties-common python-software-properties
 
 #install openhim
 
-RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 RUN npm -y install -g openhim-core
 RUN mkdir /etc/openhim
 COPY default.json /etc/openhim/core.json
