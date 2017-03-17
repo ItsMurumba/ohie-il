@@ -12,6 +12,7 @@ USER root
 #install wget
 RUN sudo apt-get update
 RUN sudo apt-get -y install wget
+RUN sudo apt-get -y install nodejs
 
 #install openhim
 RUN sudo apt-get update
