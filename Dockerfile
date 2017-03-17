@@ -21,5 +21,9 @@ RUN sudo add-apt-repository ppa:openhie/release
 RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 RUN sudo echo 'deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 RUN sudo apt-get update
-RUN sudo apt-get -y install openhim-core-js
-RUN sudo apt-get -y install openhim-console
+COPY openhim-core /etc/init.d/openhim-core
+RUN sudo chmod 777 /etc/init.d/openhim-core
+RUN sudo apt-get -y install openhim-core-js openhim-console
+
+EXPOSE 8080
+
