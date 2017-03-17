@@ -13,18 +13,20 @@ USER root
 RUN sudo apt-get update
 RUN sudo apt-get -y install wget
 RUN sudo apt-get -y install nodejs
+RUN sudo apt-get -y install npm
+RUN sudo apt-get -y install nano
 
 #install openhim
 RUN sudo apt-get update
 RUN sudo apt-get -y install software-properties-common python-software-properties
 RUN sudo apt-get update
-RUN sudo add-apt-repository ppa:openhie/release
-RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-RUN sudo echo 'deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-RUN sudo apt-get update
-COPY openhim-core /etc/init.d/openhim-core
-RUN sudo chmod 777 /etc/init.d/openhim-core
-RUN sudo apt-get -y install openhim-core-js openhim-console
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+RUN sudo apt-get -y install git build-essential
+RUN sudo npm -y install -g openhim-core
+RUN wget https://raw.githubusercontent.com/jembi/openhim-core-js/master/config/default.json
+RUN sudo mkdir /etc/openhim
+RUN sudo mv default.json /etc/openhim/core.json
+CMD openhim-core --conf=/etc/openhim/core.json --cluster=auto >> /var/log/openhim-core.log 2>&1
 
 EXPOSE 8080
 
