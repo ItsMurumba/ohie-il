@@ -32,11 +32,13 @@ RUN \
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
 #openhim console
-RUN wget https://github.com/jembi/openhim-console/releases/download/v1.9.0/openhim-console-v1.9.0.tar.gz
-RUN mv openhim-console-v1.9.0.tar.gz /var/www/html
-RUN cd /var/www/html wget https://github.com/jembi/openhim-console/releases/download/v1.9.0/openhim-console-v1.9.0.tar.gz
-RUN tar -zxf ~/var/www/html/openhim-console-v1.9.0.tar.gz
-RUN cd ~
+#RUN cd ~
+#RUN wget https://github.com/jembi/openhim-console/releases/download/v1.9.0/openhim-console-v1.9.0.tar.gz
+#RUN cp openhim-console-v1.9.0.tar.gz var/www/html
+#RUN cd var/www/html
+COPY html /var/www/html/
+#RUN tar -zxvf /var/www/html/openhim-console-v1.9.0.tar.gz -C /var/www/html/
+
 RUN cd /etc/nginx
 
 CMD nginx
