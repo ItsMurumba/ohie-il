@@ -18,7 +18,7 @@
   },
   "api": {
     "enabled" : true,
-    "httpsPort": 8080,
+    "httpPort": 8080,
     "authWindowSeconds": 10,
     "maxBodiesSizeMB": 15,
     "maxPayloadSizeMB": 50,
@@ -106,7 +106,7 @@
         "port": 5051
       },
       "tcp": {
-        "enabled": false,
+        "enabled": true,
         "port": 5052
       }
     },
@@ -129,7 +129,7 @@
   },
   "certificateManagement": {
     "watchFSForCert": false,
-    "certPath": "/etc/letsencrypt/live/openhim.jembi.org/cert.pem",
-    "keyPath": "/etc/letsencrypt/live/openhim.jembi.org/privkey.pem"
+    "certPath": "/etc/letsencrypt/live/localhost/fullchain.pem",
+    "keyPath": "/etc/letsencrypt/live/localhost/privkey.pem"
   }
 }

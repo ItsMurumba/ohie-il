@@ -24,6 +24,7 @@ RUN apt-get -y install software-properties-common python-software-properties
 RUN npm -y install -g openhim-core
 RUN mkdir /etc/openhim
 COPY default.json /etc/openhim/core.json
-EXPOSE 8080
+
 CMD openhim-core --conf=/etc/openhim/core.json --cluster=auto
 
+EXPOSE 8080
