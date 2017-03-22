@@ -128,8 +128,8 @@
     "startupDelay": 500
   },
   "certificateManagement": {
-    "watchFSForCert": false,
-    "certPath": "/etc/letsencrypt/live/localhost/fullchain.pem",
-    "keyPath": "/etc/letsencrypt/live/localhost/privkey.pem"
+    "watchFSForCert": $IL_IMPORT_CERT,
+    "certPath": "$IL_CERT_PATH",
+    "keyPath": "$IL_KEY_PATH"
   }
 }

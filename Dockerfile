@@ -25,6 +25,8 @@ RUN npm -y install -g openhim-core
 RUN mkdir /etc/openhim
 COPY default.json /etc/openhim/core.json
 
-CMD openhim-core --conf=/etc/openhim/core.json --cluster=auto
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
+CMD /run.sh
 
 EXPOSE 8080
