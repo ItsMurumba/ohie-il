@@ -18,14 +18,21 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get -y install nodejs
 RUN apt-get -y install git build-essential
 RUN apt-get -y install software-properties-common python-software-properties
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 && \
+    echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list && \
+    apt-get update && \
+    apt-get install -y mongodb-org-shell
+
 
 #install openhim
 
 RUN npm -y install -g openhim-core
 RUN mkdir /etc/openhim
-COPY default.json /etc/openhim/core.json
 
+COPY default.json /etc/openhim/core.json
+COPY mongo.js /mongo.js
 COPY run.sh /run.sh
+
 RUN chmod +x /run.sh
 CMD /run.sh
 

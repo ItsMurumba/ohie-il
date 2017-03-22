@@ -10,4 +10,10 @@ export IL_KEY_PATH
 
 /utils/replace-vars /etc/openhim/core.json
 
-openhim-core --conf=/etc/openhim/core.json --cluster=auto
+pid=`openhim-core --conf=/etc/openhim/core.json --cluster=auto &`
+
+sleep 20
+mongo mongodb://mongodb_demo/openhim /mongo.js
+
+fg $pid
+
