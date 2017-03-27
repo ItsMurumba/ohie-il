@@ -10,10 +10,10 @@ export IL_KEY_PATH
 
 /utils/replace-vars /etc/openhim/core.json
 
-pid=`openhim-core --conf=/etc/openhim/core.json --cluster=auto &`
+openhim-core --conf=/etc/openhim/core.json --cluster=auto &
 
-sleep 20
+sleep 30
 mongo mongodb://mongodb_demo/openhim /mongo.js
 
-fg $pid
-
+#Command which will keep container up
+tail -F /usr/lib/node_modules/openhim-core/docs/how-to/how-to-do-an-openhim-core-release.md
