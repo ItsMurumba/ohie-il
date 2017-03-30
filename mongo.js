@@ -1,21 +1,22 @@
 var client={
-    'clientID': 'OpenInfoManClientID',
+    'clientID': 'openinfoman',
     'name': 'OpenInfoMan',
-    'roles': ['ILR'],
     'passwordAlgorithm': 'sha512',
-    'passwordSalt': 'd9bcb40eae65478f962e5e5e5e7d0a02',
-'passwordHash':'471942A35CAF9257F25440EB573300EAFD2736CA50A019500F871CF9E025558F175E8E6914A69D8DCF2AC8B0CB78ACB5CC2814EA4DD6412048DE7895D2452178'
+    "passwordSalt": '72a00618ac4493ce12d833d4cf9a975f',
+    'passwordHash':'f1c79ab2cf8b5c7c9ab0c701433ae1499d7511d206f3b272913d0d1762c1ebf177bc7540cf58e885f8e2955359f913c4ffa6b8772f7eeb7aa4dbc634b0dd2349',
+    'roles': ['irl'],
+    '__v': 0
 }, channel={
     'name': 'Interlinked Registry',
-    'urlPattern': '/ILR||/static',
-    'allow': ['OpenInfoManClientID'],
+    'urlPattern': '/CSD||/static',
+    'allow': ['openinfoman'],
     'routes': {
-        'name': 'Route name',
+        'name': 'IRL route',
         'primary': true,
-        'host': 'localhost',
+        'host': '$ILR_HOST',
         'port': 8984,
-        'secured': true,
-        'forwardAuthHeader': true,
+        'secured': false,
+        'username': 'openinfoman',
         'password': 'openinfoman'
     }
 };

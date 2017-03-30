@@ -30,7 +30,7 @@ RUN npm -y install -g openhim-core
 RUN mkdir /etc/openhim
 
 COPY default.json /etc/openhim/core.json
-COPY mongo.js /mongo.js
+COPY mongo.js /etc/openhim/mongo.js
 COPY run.sh /run.sh
 
 RUN chmod +x /run.sh
