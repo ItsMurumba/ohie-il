@@ -37,7 +37,7 @@ COPY mongo.js /etc/openhim/mongo.js
 COPY InstallCert.java.zip /root/InstallCert.java.zip
 
 COPY mediators.sh /root/mediators.sh
-RUN chmod 777 /root/mediators.sh
+RUN chmod +x /root/mediators.sh
 RUN /root/mediators.sh
 
 COPY mediator.properties /root/mediator.properties

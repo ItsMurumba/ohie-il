@@ -23,6 +23,3 @@ cd ~/
 echo "1" | java InstallCert localhost:8080
 cp jssecacerts /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security
 java -jar mediator-xds-1.0.3-jar-with-dependencies.jar --conf mediator.properties
-
-#Command which will keep container up
-tail -F /usr/lib/node_modules/openhim-core/docs/how-to/how-to-do-an-openhim-core-release.md
