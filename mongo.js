@@ -95,8 +95,55 @@ var client={
         "irl"
       ],
       "type": "http"
+}, dhis2_channel={
+      "requestBody": true,
+      "responseBody": true,
+      "urlPattern": "^/dhis",
+      "name": "DHIS2",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrls": true,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "password": "",
+          "username": "",
+          "primary": true,
+          "pathTransform": "s/^\\/dhis/\\/api\\/26/g",
+          "path": "",
+          "port": 8080,
+          "host": "ohie-fr",
+          "secured": false,
+          "name": "DHIS2 Route",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "dhis2"
+      ],
+      "type": "http"
 };
 
 db.clients.insert(client);
+
 db.channels.insert(irl_channel);
 db.channels.insert(irl_static_channel);
+db.channels.insert(dhis2_channel);
