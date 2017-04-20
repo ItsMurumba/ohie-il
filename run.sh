@@ -4,7 +4,7 @@
 : ${IL_CERT_PATH=/var/openhim/server.crt}
 : ${IL_KEY_PATH=/var/openhim/server.key}
 : ${ILR_HOST=ohie-ilr}
-: ${IL_PASSWORD=openhie-password}
+: ${IL_PASSWORD=openhim-password}
 
 export IL_IMPORT_CERT
 export IL_CERT_PATH
@@ -23,6 +23,10 @@ mongo mongodb://mongodb_demo/openhim /etc/openhim/mongo.js
 #run mediators
 
 /utils/replace-vars /root/mediator.properties
+
+cd ~/openhim-mediator-openinfoman-dhis2-sync/
+/utils/replace-vars ./config/default.json
+node lib/server.js &
 
 cd ~/
 echo "1" | java InstallCert localhost:8080

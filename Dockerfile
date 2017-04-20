@@ -26,11 +26,12 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
 
 #install openhim
 
-RUN npm -y install -g openhim-core
+RUN npm -y install -g openhim-core grunt
 RUN mkdir /etc/openhim
 
 COPY default.json /etc/openhim/core.json
 COPY mongo.js /etc/openhim/mongo.js
+COPY dhis-mediator-config.json /etc/openhim/default.json
 
 #install mediators
 
