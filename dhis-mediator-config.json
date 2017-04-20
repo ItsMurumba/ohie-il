@@ -1,41 +1,4 @@
 {
-	"config": {
-		"sync-type": {
-		  "both-trigger-enabled": false,
-		  "mode": "DHIS2 to ILR"
-		},
-		"ilr-to-dhis": {
-		  "ilr-pass": "openinfoman",
-		  "ilr-user": "openinfoman",
-		  "dhis2-rebuild-resources": false,
-		  "dhis2-poll-timeout": "7200000",
-		  "dhis2-poll-period": "1000",
-		  "dhis2-version": "v2.19",
-		  "dhis2-pass": "district",
-		  "dhis2-user": "admin",
-		  "dhis2-url": "http://localhost:9000",
-		  "ilr-doc": "test",
-		  "ilr-url": "https://localhost:5000/CSD"
-		},
-		"dhis-to-ilr": {
-		  "ilr-pass": "openinfoman",
-		  "ilr-user": "openinfoman",
-		  "empty": false,
-		  "debug": false,
-		  "publishfull": false,
-		  "reset": false,
-		  "groupcodes": "( )",
-		  "levels": "(4 5 6)",
-		  "ignorecerts": true,
-		  "doservices": true,
-		  "dousers": true,
-		  "dhis2-pass": "district",
-		  "dhis2-user": "admin",
-		  "dhis2-url": "http://localhost:9000",
-		  "ilr-doc": "test",
-		  "ilr-url": "https://localhost:5000/CSD"
-		}
-	},
 	"logger": {
     		"level": "info"
   	},

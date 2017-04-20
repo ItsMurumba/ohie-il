@@ -32,6 +32,7 @@ RUN mkdir /etc/openhim
 COPY default.json /etc/openhim/core.json
 COPY mongo.js /etc/openhim/mongo.js
 COPY dhis-mediator-config.json /etc/openhim/default.json
+COPY openhim-ilr-dhis-mediator.json /etc/openhim/mediator.json
 
 #install mediators
 

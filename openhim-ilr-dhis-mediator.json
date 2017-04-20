@@ -1,0 +1,303 @@
+{
+	"urn": "urn:mediator:openinfoman-dhis2-sync",
+	"version": "2.3.2",
+	"name": "OpenInfoMan-DHIS2 Sync Mediator",
+	"description": "OpenInfoMan-DHIS2 Sync Mediator",
+	"config": {
+	"sync-type": {
+	  "both-trigger-url": "https://localhost:5000/ILR/CSD/pollService/directory/DATIM-OU-TZ/update_cache",
+	  "both-trigger-enabled": false,
+	  "mode": "DHIS2 to ILR"
+	},
+	"ilr-to-dhis": {
+	  "dhis2-rebuild-resources": false,
+	  "dhis2-poll-timeout": "7200000",
+	  "dhis2-poll-period": "1000",
+	  "dhis2-version": "v2.26",
+	  "dhis2-pass": "district",
+	  "dhis2-user": "admin",
+	  "dhis2-url": "https://localhost:9000",
+	  "ilr-doc": "test",
+	  "ilr-url": "https://localhost:5000/CSD"
+	},
+	"dhis-to-ilr": {
+	  "empty": false,
+	  "debug": false,
+	  "publishfull": false,
+	  "reset": false,
+	  "groupcodes": "( )",
+	  "levels": "(4 5 6)",
+	  "ignorecerts": true,
+	  "doservices": true,
+	  "dousers": true,
+	  "dhis2-pass": "district",
+	  "dhis2-user": "admin",
+	  "dhis2-url": "https://localhost:9000",
+	  "ilr-doc": "test",
+	  "ilr-url": "https://localhost:5000/CSD"
+	}
+	},
+	"configDefs": [
+	{
+	  "param": "dhis-to-ilr",
+	  "type": "struct",
+	  "displayName": "DHIS2 to ILR Synchronization",
+	  "description": "Setup for the DHIS2 to ILR Synchronization mode",
+	  "template": [
+	    {
+	      "displayName": "ILR URL",
+	      "type": "string",
+	      "param": "ilr-url"
+	    },
+	    {
+	      "description": "Name of CSD document to publish to",
+	      "displayName": "ILR Document",
+	      "type": "string",
+	      "param": "ilr-doc"
+	    },
+	    {
+	      "displayName": "ILR User",
+	      "type": "string",
+	      "param": "ilr-user"
+	    },
+	    {
+	      "displayName": "ILR Password",
+	      "type": "string",
+	      "param": "ilr-pass"
+	    },
+	    {
+	      "displayName": "DHIS2 URL",
+	      "type": "string",
+	      "param": "dhis2-url"
+	    },
+	    {
+	      "displayName": "DHIS2 Username",
+	      "type": "string",
+	      "param": "dhis2-user"
+	    },
+	    {
+	      "displayName": "DHIS2 Password",
+	      "type": "string",
+	      "param": "dhis2-pass"
+	    },
+	    {
+	      "description": "Process DHIS2 Users are Health workers",
+	      "displayName": "DHIS2 Users as Health Workers",
+	      "type": "bool",
+	      "param": "dousers"
+	    },
+	    {
+	      "description": "Process DHIS2 Data Elements as services",
+	      "displayName": "DHIS2 Data Elements as Services",
+	      "type": "bool",
+	      "param": "doservices"
+	    },
+	    {
+	      "description": "Ignore certificate checks",
+	      "displayName": "Ignore Certs",
+	      "type": "bool",
+	      "param": "ignorecerts"
+	    },
+	    {
+	      "description": "Levels of a facility. Example: LEVELS=(3 4 5)",
+	      "displayName": "Levels",
+	      "type": "string",
+	      "param": "levels"
+	    },
+	    {
+	      "description": "Groups codes. Example: GROUPS=(COMMUNITY FACILITY COUNTRY)",
+	      "displayName": "Group Codes",
+	      "type": "string",
+	      "param": "groupcodes"
+	    },
+	    {
+	      "description": "Reset the last exported time",
+	      "displayName": "Reset Last Exported Time",
+	      "type": "bool",
+	      "param": "reset"
+	    },
+	    {
+	      "description": "Publish the full DHIS2 metadata (ignore the last exported time)",
+	      "displayName": "Publish Full DHIS2 Metadata",
+	      "type": "bool",
+	      "param": "publishfull"
+	    },
+	    {
+	      "displayName": "Debug mode",
+	      "type": "bool",
+	      "param": "debug"
+	    },
+	    {
+	      "description": "Empty the CSD document before publishing",
+	      "displayName": "Empty CSD Document",
+	      "type": "bool",
+	      "param": "empty"
+	    }
+	  ],
+	  "values": []
+	},
+	{
+	  "param": "ilr-to-dhis",
+	  "type": "struct",
+	  "displayName": "ILR to DHIS2 Synchronization",
+	  "description": "Setup for the ILR to DHIS2 Synchronization mode",
+	  "template": [
+	    {
+	      "displayName": "ILR URL",
+	      "type": "string",
+	      "param": "ilr-url"
+	    },
+	    {
+	      "description": "Name of CSD document to publish to",
+	      "displayName": "ILR Document",
+	      "type": "string",
+	      "param": "ilr-doc"
+	    },
+	    {
+	      "displayName": "ILR User",
+	      "type": "string",
+	      "param": "ilr-user"
+	    },
+	    {
+	      "displayName": "ILR Password",
+	      "type": "string",
+	      "param": "ilr-pass"
+	    },
+	    {
+	      "displayName": "DHIS2 URL",
+	      "type": "string",
+	      "param": "dhis2-url"
+	    },
+	    {
+	      "displayName": "DHIS2 Username",
+	      "type": "string",
+	      "param": "dhis2-user"
+	    },
+	    {
+	      "displayName": "DHIS2 Password",
+	      "type": "string",
+	      "param": "dhis2-pass"
+	    },
+	    {
+	      "description": "The version of DHIS to export data for. This is used to call the correct stored query in the ILR for the correct DHIS2 version.",
+	      "displayName": "DHIS2 version",
+	      "type": "string",
+	      "param": "dhis2-version"
+	    },
+	    {
+	      "description": "The period on which to poll the DHIS2 API to check whether the rebuild resource table system task is complete.",
+	      "displayName": "DHIS2 tasks polling period (ms)",
+	      "type": "number",
+	      "param": "dhis2-poll-period"
+	    },
+	    {
+	      "description": "The timeout after which to stop polling the DHIS2 API and return an error.",
+	      "displayName": "DHIS2 task polling timeout (ms)",
+	      "type": "number",
+	      "param": "dhis2-poll-timeout"
+	    },
+	    {
+	      "description": "If this is enabled then the DHIS2 resource table will be rebuilt after data is imported into DHIS2.",
+	      "displayName": "DHIS2 enable resource rebuild",
+	      "type": "bool",
+	      "param": "dhis2-rebuild-resources"
+	    }
+	  ],
+	  "values": []
+	},
+	{
+	  "param": "sync-type",
+	  "type": "struct",
+	  "displayName": "Synchronization Type Setup",
+	  "description": "The steps that need to happen when a synchronization is triggered",
+	  "template": [
+	    {
+	      "values": [
+		"DHIS2 to ILR",
+		"ILR to DHIS2",
+		"Both"
+	      ],
+	      "description": "The type of synchronization to perform: DHIS to ILR, ILR to DHIS or both",
+	      "displayName": "Mode",
+	      "type": "option",
+	      "param": "mode"
+	    },
+	    {
+	      "description": "If enabled, a target trigger URL will be called in between running the DHIS-to-ILR and ILR-to-DHIS processes",
+	      "displayName": "Both Mode Trigger",
+	      "type": "bool",
+	      "param": "both-trigger-enabled"
+	    },
+	    {
+	      "displayName": "Both Mode Trigger URL",
+	      "type": "string",
+	      "param": "both-trigger-url"
+	    },
+	    {
+	      "displayName": "Both Mode Trigger Client Certificate",
+	      "type": "bigstring",
+	      "param": "both-trigger-client-cert"
+	    },
+	    {
+	      "displayName": "Both Mode Trigger Client Key",
+	      "type": "bigstring",
+	      "param": "both-trigger-client-key"
+	    },
+	    {
+	      "displayName": "Both Mode Trigger CA Cert",
+	      "type": "bigstring",
+	      "param": "both-trigger-ca-cert"
+	    }
+	  ],
+	  "values": []
+	}
+	],
+	"defaultChannelConfig": [
+	{
+	  "name": "OpenInfoMan-DHIS2 Sync",
+	  "pollingSchedule": "0 0 * * *",
+	  "urlPattern": "^/_infomansync$",
+	  "autoRetryPeriodMinutes": 60,
+	  "autoRetryEnabled": false,
+	  "rewriteUrlsConfig": [],
+	  "addAutoRewriteRules": true,
+	  "rewriteUrls": false,
+	  "status": "enabled",
+	  "alerts": [],
+	  "txRerunAcl": [],
+	  "txViewFullAcl": [],
+	  "txViewAcl": [],
+	  "properties": [],
+	  "matchContentTypes": [],
+	  "routes": [
+	    {
+	      "name": "OpenInfoMan-DHIS2 Sync Trigger",
+	      "host": "localhost",
+	      "port": 5012,
+	      "path": "/trigger",
+	      "primary": true,
+	      "forwardAuthHeader": false,
+	      "status": "enabled",
+	      "type": "http"
+	    }
+	  ],
+	  "authType": "private",
+	  "whitelist": [],
+	  "allow": [
+	    "internal"
+	  ],
+	  "type": "polling"
+	}
+	],
+	"endpoints": [
+	{
+	  "name": "OpenInfoMan-DHIS2 Sync Trigger",
+	  "host": "localhost",
+	  "port": 5012,
+	  "path": "/trigger",
+	  "forwardAuthHeader": false,
+	  "status": "enabled",
+	  "type": "http"
+	}
+	]
+}
