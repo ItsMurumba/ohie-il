@@ -195,6 +195,116 @@ var ilr_client = {
         "shr"
       ],
       "type": "http"
+}, empi_client = {
+      "clientID": "empi",
+      "name": "empi",
+      "passwordAlgorithm": "sha512",
+      "passwordSalt": "35e63ec394acbbdf54d062709736b1b1",
+      "passwordHash": "e9a65c38ce8b1ce9f3db74f3a41e705b48c26c608af16669ed8ba1ab5df6514bcebd92a3d512fd5c41ddc7f9a6848c8be3a308aea76ada261d47abf93771be6e",
+      "roles": [
+        "cr"
+      ]
+}, empi_channel = {
+"requestBody": true,
+      "responseBody": true,
+      "name": "Openempi",
+      "urlPattern": "^/*",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "CR Route",
+          "secured": false,
+          "host": "ohie-cr",
+          "port": 8080,
+          "path": "",
+          "pathTransform": "",
+          "primary": true,
+          "username": "admin",
+          "password": "admin",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "cr"
+      ],
+      "type": "http"
+}, pix_client = {
+      "clientID": "pixc",
+      "name": "pixc",
+      "passwordAlgorithm": "sha512",
+      "passwordSalt": "c84dadde8f7e3b26b7b4e671fcba7284",
+      "passwordHash": "c6adc8ae2abc6067850b7c50d435cd6c2b2185cbd05288c7e344e04bc0804e324efb0bd758b0c6c7eb61b5878db423f3dfa9449734cfcb94f116b93594012a46",
+      "roles": [
+        "pix"
+      ]
+}, pix_channel = {
+      "requestBody": true,
+      "responseBody": true,
+      "name": "OHIE: PIX/PDQ",
+      "tcpHost": "0.0.0.0",
+      "tcpPort": 8989,
+      "urlPattern": "_tcp",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "PIX route",
+          "secured": false,
+          "host": "ohie-cr",
+          "port": 8080,
+          "path": "/test",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "status": "enabled",
+          "type": "tcp"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "pix"
+      ],
+      "type": "tcp"
 };
 
 db.clients.insert(ilr_client);
@@ -205,3 +315,9 @@ db.channels.insert(dhis2_channel);
 
 db.clients.insert(shr_client);
 db.channels.insert(shr_channel);
+
+db.clients.insert(empi_client);
+db.channels.insert(empi_channel);
+
+db.clients.insert(pix_client);
+db.channels.insert(pix_channel);
