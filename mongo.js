@@ -305,6 +305,40 @@ var ilr_client = {
         "pix"
       ],
       "type": "tcp"
+}, dhis_mediator_channel = {
+	"name": "OpenInfoMan-DHIS2 Sync",
+	"pollingSchedule": "0 0 * * *",
+	"urlPattern": "^/_infomansync$",
+	"autoRetryPeriodMinutes": 60,
+	"autoRetryEnabled": false,
+	"rewriteUrlsConfig": [],
+	"addAutoRewriteRules": true,
+	"rewriteUrls": false,
+	"status": "enabled",
+	"alerts": [],
+	"txRerunAcl": [],
+	"txViewFullAcl": [],
+	"txViewAcl": [],
+	"properties": [],
+	"matchContentTypes": [],
+	"routes": [
+	{
+	  "name": "OpenInfoMan-DHIS2 Sync Trigger",
+	  "host": "localhost",
+	  "port": 5012,
+	  "path": "/trigger",
+	  "primary": true,
+	  "forwardAuthHeader": false,
+	  "status": "enabled",
+	  "type": "http"
+	}
+	],
+	"authType": "private",
+	"whitelist": [],
+	"allow": [
+	  "internal"
+	],
+	"type": "polling"
 };
 
 db.clients.insert(ilr_client);
@@ -321,3 +355,5 @@ db.channels.insert(empi_channel);
 
 db.clients.insert(pix_client);
 db.channels.insert(pix_channel);
+
+db.channels.insert(dhis_mediator_channel);
