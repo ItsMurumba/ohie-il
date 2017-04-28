@@ -16,9 +16,9 @@
 	  "dhis2-version": "v2.26",
 	  "dhis2-pass": "district",
 	  "dhis2-user": "admin",
-	  "dhis2-url": "https://localhost:9000",
-	  "ilr-doc": "test",
-	  "ilr-url": "https://localhost:5000/CSD"
+	  "dhis2-url": "http://ohie-fr:8080",
+	  "ilr-doc": "DHIS",
+	  "ilr-url": "https://$ILR_HOST:5000/CSD"
 	},
 	"dhis-to-ilr": {
 	  "empty": false,
@@ -32,9 +32,9 @@
 	  "dousers": true,
 	  "dhis2-pass": "district",
 	  "dhis2-user": "admin",
-	  "dhis2-url": "https://localhost:9000",
-	  "ilr-doc": "test",
-	  "ilr-url": "https://localhost:5000/CSD"
+	  "dhis2-url": "http://ohie-fr:8080",
+	  "ilr-doc": "DHIS",
+	  "ilr-url": "https://$ILR_HOST:5000/CSD"
 	}
 	},
 	"configDefs": [

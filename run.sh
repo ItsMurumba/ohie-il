@@ -23,6 +23,7 @@ mongo mongodb://mongodb_demo/openhim /etc/openhim/mongo.js
 #run mediators
 
 /utils/replace-vars /root/mediator.properties
+/utils/replace-vars /etc/openhim/mediator.json
 
 cd ~/openhim-mediator-openinfoman-dhis2-sync/
 /utils/replace-vars ./config/default.json
