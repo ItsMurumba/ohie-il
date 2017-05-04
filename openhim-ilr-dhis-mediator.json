@@ -5,7 +5,7 @@
 	"description": "OpenInfoMan-DHIS2 Sync Mediator",
 	"config": {
 	"sync-type": {
-	  "both-trigger-url": "https://localhost:5000/ILR/CSD/pollService/directory/DATIM-OU-TZ/update_cache",
+	  "both-trigger-url": "https://$ILR_HOST:5000/ILR/CSD/pollService/directory/DATIM-OU-TZ/update_cache",
 	  "both-trigger-enabled": false,
 	  "mode": "DHIS2 to ILR"
 	},
@@ -18,7 +18,9 @@
 	  "dhis2-user": "admin",
 	  "dhis2-url": "http://ohie-fr:8080",
 	  "ilr-doc": "DHIS",
-	  "ilr-url": "https://$ILR_HOST:5000/CSD"
+	  "ilr-url": "https://$ILR_HOST:5000/CSD",
+	  "ilr-user": "openinfoman",
+	  "ilr-pass": "openinfoman"
 	},
 	"dhis-to-ilr": {
 	  "empty": false,
@@ -34,7 +36,9 @@
 	  "dhis2-user": "admin",
 	  "dhis2-url": "http://ohie-fr:8080",
 	  "ilr-doc": "DHIS",
-	  "ilr-url": "https://$ILR_HOST:5000/CSD"
+	  "ilr-url": "https://$ILR_HOST:5000/CSD",
+	  "ilr-user": "openinfoman",
+	  "ilr-pass": "openinfoman"
 	}
 	},
 	"configDefs": [

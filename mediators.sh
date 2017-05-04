@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${ILR_HOST=localhost}
+: ${ILR_HOST=ohie-ilr}
 
 export ILR_HOST
 
