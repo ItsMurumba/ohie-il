@@ -149,7 +149,8 @@ var ilr_client = {
       "roles": [
         "shr"
       ]
-}, shr_channel = "name": "XDS.b Mediator",
+}, shr_channel = {
+      "name": "XDS.b Mediator",
       "urlPattern": "^/xds(registry|repository)$",
       "autoRetryPeriodMinutes": 60,
       "autoRetryEnabled": false,
