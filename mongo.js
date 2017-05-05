@@ -149,18 +149,8 @@ var ilr_client = {
       "roles": [
         "shr"
       ]
-}, shr_channel = {
-      "requestBody": true,
-      "responseBody": true,
-      "matchContentRegex": null,
-      "matchContentXpath": null,
-      "matchContentValue": null,
-      "matchContentJson": null,
-      "name": "XDS repository and registry",
-      "urlPattern": "^/xdsrepository|/xdsregistry",
-      "pollingSchedule": null,
-      "tcpHost": null,
-      "tcpPort": null,
+}, shr_channel = "name": "XDS.b Mediator",
+      "urlPattern": "^/xds(registry|repository)$",
       "autoRetryPeriodMinutes": 60,
       "autoRetryEnabled": false,
       "rewriteUrlsConfig": [],
@@ -175,15 +165,11 @@ var ilr_client = {
       "matchContentTypes": [],
       "routes": [
         {
-          "name": "XDS.b Mediator",
           "secured": false,
-          "host": "localhost",
-          "port": 8500,
-          "path": "",
-          "pathTransform": "",
           "primary": true,
-          "username": "",
-          "password": "",
+          "port": 8500,
+          "host": "localhost",
+          "name": "XDS.b Mediator",
           "forwardAuthHeader": false,
           "status": "enabled",
           "type": "http"
@@ -194,8 +180,15 @@ var ilr_client = {
       "allow": [
         "shr"
       ],
-      "type": "http"
-}, empi_client = {
+      "type": "http",
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "matchContentXpath": null,
+      "matchContentRegex": null
+    }, empi_client = {
       "clientID": "empi",
       "name": "empi",
       "passwordAlgorithm": "sha512",
