@@ -22,6 +22,7 @@ cp /etc/openhim/mediator.json ./config/mediator.json
 #install xmllint
 sudo apt install xmllint
 sudo apt install libxml2-utils
+sudo apt-get install jshon
 
 npm install
 grunt build
