@@ -322,7 +322,7 @@ var ilr_client = {
 	  "port": 5012,
 	  "path": "/trigger",
 	  "primary": true,
-	  "forwardAuthHeader": false,
+	  "forwardAuthHeader": true,
 	  "status": "enabled",
 	  "type": "http"
 	}
