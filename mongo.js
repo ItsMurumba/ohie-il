@@ -301,13 +301,13 @@ var ilr_client = {
       "type": "tcp"
 }, dhis_mediator_channel = {
 	"name": "OpenInfoMan-DHIS2 Sync",
-	"pollingSchedule": "60 minutes",
+	"pollingSchedule": "41 minutes",
 	"urlPattern": "^/_infomansync$",
-	"autoRetryPeriodMinutes": 60,
+	"autoRetryPeriodMinutes": 41,
 	"autoRetryEnabled": false,
 	"rewriteUrlsConfig": [],
-	"addAutoRewriteRules": true,
-	"rewriteUrls": false,
+	"addAutoRewriteRules": false,
+	"rewriteUrls": true,
 	"status": "enabled",
 	"alerts": [],
 	"txRerunAcl": [],
@@ -321,6 +321,7 @@ var ilr_client = {
 	  "host": "localhost",
 	  "port": 5012,
 	  "path": "/trigger",
+	  "secured": false,
 	  "primary": true,
 	  "forwardAuthHeader": true,
 	  "status": "enabled",
@@ -332,7 +333,15 @@ var ilr_client = {
 	"allow": [
 	  "internal"
 	],
-	"type": "polling"
+	"type": "polling",
+        "tcpPort": null,
+        "tcpHost": null,
+        "matchContentJson": null,
+        "matchContentValue": null,
+        "matchContentXpath": null,
+        "matchContentRegex": null,
+        "responseBody": true,
+        "requestBody": true
 };
 
 db.clients.insert(ilr_client);
