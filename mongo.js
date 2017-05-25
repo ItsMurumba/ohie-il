@@ -279,18 +279,32 @@ var ilr_client = {
       "matchContentTypes": [],
       "routes": [
         {
+          "password": "",
+          "username": "",
+          "primary": true,
+          "pathTransform": "",
+          "path": "",
+          "port": 3600,
+          "host": "ohie-cr",
+          "secured": false,
           "name": "PIX route",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "mllp"
+        },
+        {
+          "name": "PDQ route",
           "secured": false,
           "host": "ohie-cr",
-          "port": 3600,
+          "port": 3700,
           "path": "",
           "pathTransform": "",
-          "primary": true,
+          "primary": false,
           "username": "",
           "password": "",
-          "forwardAuthHeader": false,
+          "forwardAuthHeader": true,
           "status": "enabled",
-          "type": "tcp"
+          "type": "mllp"
         }
       ],
       "authType": "private",
