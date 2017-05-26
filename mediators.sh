@@ -19,6 +19,7 @@ cp /etc/openhim/mediator.json ./config/mediator.json
 
 /utils/replace-vars ./config/mediator.json
 
+#install xmllint
 sudo apt install xmllint
 sudo apt install libxml2-utils
 sudo apt install -y jshon

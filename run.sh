@@ -16,7 +16,7 @@ export IL_PASSWORD
 
 openhim-core --conf=/etc/openhim/core.json --cluster=auto &
 
-sleep 10
+sleep 20
 /utils/replace-vars /etc/openhim/mongo.js
 mongo mongodb://mongodb_demo/openhim /etc/openhim/mongo.js
 
