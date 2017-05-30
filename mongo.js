@@ -315,7 +315,7 @@ var ilr_client = {
       "type": "tcp"
 }, dhis_mediator_channel = {
 	"name": "OpenInfoMan-DHIS2 Sync",
-	"pollingSchedule": "60 minutes",
+	"pollingSchedule": "30 * * * *",
 	"urlPattern": "^/_infomansync$",
 	"autoRetryPeriodMinutes": 60,
 	"autoRetryEnabled": false,
