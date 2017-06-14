@@ -149,47 +149,7 @@ var ilr_client = {
       "roles": [
         "shr"
       ]
-}, shr_channel = {
-      "name": "XDS.b Mediator",
-      "urlPattern": "^/xds(registry|repository)$",
-      "autoRetryPeriodMinutes": 60,
-      "autoRetryEnabled": false,
-      "rewriteUrlsConfig": [],
-      "addAutoRewriteRules": true,
-      "rewriteUrls": false,
-      "status": "enabled",
-      "alerts": [],
-      "txRerunAcl": [],
-      "txViewFullAcl": [],
-      "txViewAcl": [],
-      "properties": [],
-      "matchContentTypes": [],
-      "routes": [
-        {
-          "secured": false,
-          "primary": true,
-          "port": 8500,
-          "host": "localhost",
-          "name": "XDS.b Mediator",
-          "forwardAuthHeader": false,
-          "status": "enabled",
-          "type": "http"
-        }
-      ],
-      "authType": "private",
-      "whitelist": [],
-      "allow": [
-        "shr"
-      ],
-      "type": "http",
-      "tcpPort": null,
-      "tcpHost": null,
-      "pollingSchedule": null,
-      "matchContentJson": null,
-      "matchContentValue": null,
-      "matchContentXpath": null,
-      "matchContentRegex": null
-    }, empi_client = {
+}, empi_client = {
       "clientID": "empi",
       "name": "empi",
       "passwordAlgorithm": "sha512",
@@ -347,6 +307,57 @@ var ilr_client = {
 	  "internal"
 	],
 	"type": "polling"
+}, xds_client = {
+      "clientID": "xds",
+      "name": "xds",
+      "passwordAlgorithm": "sha512",
+      "passwordSalt": "08eeaf9361bfa6efa5dcacd50b3bf8c9",
+      "passwordHash": "b6fc7613d3ef8583770745b2c39cbb3d4bc49c2bd50e307eff66aa48b8f68151b710c0ee8f381111723727fc0dc9e333d1157ba290db680a298d288f7e2fc312",
+      "roles": [
+        "xdsRole"
+      ]
+}, xds_mediator_channel = {
+      "name": "XDS.b Mediator",
+      "urlPattern": "^/xds(registry|repository)$",
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "secured": false,
+          "primary": true,
+          "port": 8500,
+          "host": "localhost",
+          "name": "XDS.b Mediator",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "xds",
+        "xdsRole"
+      ],
+      "type": "http",
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "matchContentXpath": null,
+      "matchContentRegex": null    
+
 };
 
 db.clients.insert(ilr_client);
@@ -356,7 +367,6 @@ db.channels.insert(ilr_static_channel);
 db.channels.insert(dhis2_channel);
 
 db.clients.insert(shr_client);
-db.channels.insert(shr_channel);
 
 db.clients.insert(empi_client);
 db.channels.insert(empi_channel);
@@ -365,3 +375,6 @@ db.clients.insert(pix_client);
 db.channels.insert(pix_channel);
 
 db.channels.insert(dhis_mediator_channel);
+
+db.clients.insert(xds_client);
+db.channels.insert(xds_mediator_channel);
