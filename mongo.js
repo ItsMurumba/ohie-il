@@ -216,10 +216,56 @@ var ilr_client = {
 }, pix_channel = {
       "requestBody": true,
       "responseBody": true,
-      "name": "OHIE: PIX/PDQ",
-      "tcpHost": "0.0.0.0",
-      "tcpPort": 8989,
-      "urlPattern": "_tcp",
+      "name": "OHIE: PIX",
+      "urlPattern": "^/pix",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "PIX Route",
+          "secured": false,
+          "host": "ohie-cr",
+          "port": 3600,
+          "path": "",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "mllp"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "pix"
+      ],
+      "type": "http"
+}, pdq_channel = {
+     "requestBody": true,
+      "responseBody": true,
+      "name": "OHIE: PDQ",
+      "tcpHost": null,
+      "tcpPort": null,
+      "urlPattern": "^/pdq",
       "matchContentRegex": null,
       "matchContentXpath": null,
       "matchContentValue": null,
@@ -244,24 +290,10 @@ var ilr_client = {
           "primary": true,
           "pathTransform": "",
           "path": "",
-          "port": 3600,
-          "host": "ohie-cr",
-          "secured": false,
-          "name": "PIX route",
-          "forwardAuthHeader": true,
-          "status": "enabled",
-          "type": "mllp"
-        },
-        {
-          "name": "PDQ route",
-          "secured": false,
-          "host": "ohie-cr",
           "port": 3700,
-          "path": "",
-          "pathTransform": "",
-          "primary": false,
-          "username": "",
-          "password": "",
+          "host": "ohie-cr",
+          "secured": false,
+          "name": "PDQ route",
           "forwardAuthHeader": true,
           "status": "enabled",
           "type": "mllp"
@@ -272,8 +304,8 @@ var ilr_client = {
       "allow": [
         "pix"
       ],
-      "type": "tcp"
-}, dhis_mediator_channel = {
+      "type": "http"
+},dhis_mediator_channel = {
 	"name": "OpenInfoMan-DHIS2 Sync",
 	"pollingSchedule": "30 * * * *",
 	"urlPattern": "^/_infomansync$",
@@ -373,6 +405,7 @@ db.channels.insert(empi_channel);
 
 db.clients.insert(pix_client);
 db.channels.insert(pix_channel);
+db.channels.insert(pdq_channel);
 
 db.channels.insert(dhis_mediator_channel);
 
