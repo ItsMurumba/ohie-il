@@ -390,6 +390,50 @@ var ilr_client = {
       "matchContentXpath": null,
       "matchContentRegex": null    
 
+}, openshr_xds_registry_channel = {
+      "requestBody": true,
+      "responseBody": true,
+      "name": "OpenSHR XDS Registry",
+      "urlPattern": "^/SHRXDSRegistry$",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "OpenSHR XDS Registry",
+          "secured": false,
+          "host": "openshr",
+          "port": 8080,
+          "path": "/openmrs/ms/xdsrepository",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "status": "enabled",
+          "type": "http"
+        }
+      ],
+      "authType": "public",
+      "whitelist": [],
+      "allow": [],
+      "type": "http"
 };
 
 db.clients.insert(ilr_client);
@@ -411,3 +455,5 @@ db.channels.insert(dhis_mediator_channel);
 
 db.clients.insert(xds_client);
 db.channels.insert(xds_mediator_channel);
+
+db.channels.insert(openshr_xds_registry_channel);
