@@ -1,8 +1,8 @@
 #!/bin/bash
 
-: ${ILR_HOST=ohie-ilr}
+: ${SERVER_NAME=ohie-ilr}
 
-export ILR_HOST
+export SERVER_NAME
 
 cd ~/
 unzip InstallCert.java.zip

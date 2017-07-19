@@ -3,13 +3,12 @@
 : ${IL_IMPORT_CERT=false}
 : ${IL_CERT_PATH=/var/openhim/server.crt}
 : ${IL_KEY_PATH=/var/openhim/server.key}
-: ${ILR_HOST=ohie-ilr}
 : ${IL_PASSWORD=openhim-password}
+: ${SERVER_ADDRESS=ohie-ilr}
 
 export IL_IMPORT_CERT
 export IL_CERT_PATH
 export IL_KEY_PATH
-export ILR_HOST
 export IL_PASSWORD
 
 /utils/replace-vars /etc/openhim/core.json
