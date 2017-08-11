@@ -1,8 +1,8 @@
 {
   "bindAddress": "0.0.0.0",
   "mongo": {
-    "url": "mongodb://mongodb_demo/openhim",
-    "atnaUrl": "mongodb://mongodb_demo/openhim"
+    "url": "mongodb://mongodb/openhim",
+    "atnaUrl": "mongodb://mongodb/openhim"
   },
   "logger": {
     "level": "info",

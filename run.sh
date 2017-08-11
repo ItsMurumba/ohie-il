@@ -17,7 +17,7 @@ openhim-core --conf=/etc/openhim/core.json --cluster=auto &
 
 sleep 20
 /utils/replace-vars /etc/openhim/mongo.js
-mongo mongodb://mongodb_demo/openhim /etc/openhim/mongo.js
+mongo mongodb://mongodb/openhim /etc/openhim/mongo.js
 
 #run mediators
 
