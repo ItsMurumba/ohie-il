@@ -149,61 +149,6 @@ var ilr_client = {
       "roles": [
         "shr"
       ]
-}, empi_client = {
-      "clientID": "empi",
-      "name": "empi",
-      "passwordAlgorithm": "sha512",
-      "passwordSalt": "35e63ec394acbbdf54d062709736b1b1",
-      "passwordHash": "e9a65c38ce8b1ce9f3db74f3a41e705b48c26c608af16669ed8ba1ab5df6514bcebd92a3d512fd5c41ddc7f9a6848c8be3a308aea76ada261d47abf93771be6e",
-      "roles": [
-        "cr"
-      ]
-}, empi_channel = {
-"requestBody": true,
-      "responseBody": true,
-      "name": "Openempi",
-      "urlPattern": "^/*",
-      "matchContentRegex": null,
-      "matchContentXpath": null,
-      "matchContentValue": null,
-      "matchContentJson": null,
-      "pollingSchedule": null,
-      "tcpHost": null,
-      "tcpPort": null,
-      "autoRetryPeriodMinutes": 60,
-      "autoRetryEnabled": false,
-      "rewriteUrlsConfig": [],
-      "addAutoRewriteRules": true,
-      "rewriteUrls": false,
-      "status": "enabled",
-      "alerts": [],
-      "txRerunAcl": [],
-      "txViewFullAcl": [],
-      "txViewAcl": [],
-      "properties": [],
-      "matchContentTypes": [],
-      "routes": [
-        {
-          "name": "CR Route",
-          "secured": false,
-          "host": "ohie-cr",
-          "port": 8080,
-          "path": "",
-          "pathTransform": "",
-          "primary": true,
-          "username": "admin",
-          "password": "admin",
-          "forwardAuthHeader": true,
-          "status": "enabled",
-          "type": "http"
-        }
-      ],
-      "authType": "private",
-      "whitelist": [],
-      "allow": [
-        "cr"
-      ],
-      "type": "http"
 }, pix_client = {
       "clientID": "pixc",
       "name": "pixc",
@@ -489,6 +434,61 @@ var ilr_client = {
         "fingerprintRole"
       ],
       "type": "http"
+}, fingerprintBulkSearch_client = {
+      "clientID": "fingerprintBulkSearch",
+      "name": "fingerprintBulkSearch",
+      "passwordAlgorithm": "sha512",
+      "passwordSalt": "35e63ec394acbbdf54d062709736b1b1",
+      "passwordHash": "40E0F1E4DF85F8CCAB1513D0483BBFFC4CCE0E72926BE96FD47C5A37052675B854816D539BE5E8A346C9A43B14C06AA32F63FA2594F4589E457F71F6DBDA0417",
+      "roles": [
+        "fingerprintRole"
+      ]
+}, fingerprintBulkSearch_channel = {
+      "requestBody": true,
+      "responseBody": true,
+      "name": "Fingerprint Bulk Search",
+      "urlPattern": "^/fingerprintBulkSearch",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "Fingerprint Bulk Search Route",
+          "secured": false,
+          "host": "localhost",
+          "port": 6000,
+          "path": "",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "fingerprintRole"
+      ],
+      "type": "http"
 };
 
 db.clients.insert(ilr_client);
@@ -498,9 +498,6 @@ db.channels.insert(ilr_static_channel);
 db.channels.insert(dhis2_channel);
 
 db.clients.insert(shr_client);
-
-db.clients.insert(empi_client);
-db.channels.insert(empi_channel);
 
 db.clients.insert(pix_client);
 db.channels.insert(pix_channel);
@@ -515,3 +512,6 @@ db.channels.insert(openshr_xds_registry_channel);
 
 db.clients.insert(fingerprint_client);
 db.channels.insert(fingerprint_channel);
+
+db.clients.insert(fingerprintBulkSearch_client);
+db.channels.insert(fingerprintBulkSearch_channel);
