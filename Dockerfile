@@ -45,9 +45,9 @@ RUN /root/mediators.sh
 
 COPY mediator.properties /root/mediator.properties
 
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
-CMD /run.sh
+COPY cmd.sh /cmd.sh
+RUN chmod +x /cmd.sh
+CMD /cmd.sh
 
 EXPOSE 5012
 EXPOSE 8080
