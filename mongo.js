@@ -379,116 +379,6 @@ var ilr_client = {
       "whitelist": [],
       "allow": [],
       "type": "http"
-}, fingerprint_client =     {
-      "clientID": "fingerprintClient",
-      "name": "fingerprintClient",
-      "passwordAlgorithm": "sha512",
-      "passwordSalt": "b6d8e344449b1784dbc3bc5fa3b32e16",
-      "passwordHash": "ec46d69c2f118ed6a5b2e1bb0807cdaa08c417f57d93118d1243a39d2dc0983790a5c7eb92654a32bfffa309ed014c06cf6241a8e83d607b57ee828b800a5865",
-      "roles": [
-        "fingerprintRole"
-      ]
-}, fingerprint_channel = {
-      "requestBody": true,
-      "responseBody": true,
-      "name": "National Fingerprint",
-      "urlPattern": "^/fingerprint$",
-      "matchContentRegex": null,
-      "matchContentXpath": null,
-      "matchContentValue": null,
-      "matchContentJson": null,
-      "pollingSchedule": null,
-      "tcpHost": null,
-      "tcpPort": null,
-      "autoRetryPeriodMinutes": 60,
-      "autoRetryEnabled": false,
-      "rewriteUrlsConfig": [],
-      "addAutoRewriteRules": true,
-      "rewriteUrls": false,
-      "status": "enabled",
-      "alerts": [],
-      "txRerunAcl": [],
-      "txViewFullAcl": [],
-      "txViewAcl": [],
-      "properties": [],
-      "matchContentTypes": [],
-      "routes": [
-        {
-          "password": "",
-          "username": "",
-          "primary": true,
-          "pathTransform": "",
-          "path": "/M2Sys.BioPluginWeb/BioPluginService.asmx",
-          "port": 80,
-          "host": "$FINGERPRINT_HOST",
-          "secured": false,
-          "name": "National Fingerprint route",
-          "forwardAuthHeader": false,
-          "status": "enabled",
-          "type": "http"
-        }
-      ],
-      "authType": "private",
-      "whitelist": [],
-      "allow": [
-        "fingerprintRole"
-      ],
-      "type": "http"
-}, fingerprintBulkSearch_client = {
-      "clientID": "fingerprintBulkSearch",
-      "name": "fingerprintBulkSearch",
-      "passwordAlgorithm": "sha512",
-      "passwordSalt": "35e63ec394acbbdf54d062709736b1b1",
-      "passwordHash": "40E0F1E4DF85F8CCAB1513D0483BBFFC4CCE0E72926BE96FD47C5A37052675B854816D539BE5E8A346C9A43B14C06AA32F63FA2594F4589E457F71F6DBDA0417",
-      "roles": [
-        "fingerprintRole"
-      ]
-}, fingerprintBulkSearch_channel = {
-      "requestBody": true,
-      "responseBody": true,
-      "name": "Fingerprint Bulk Search",
-      "urlPattern": "^/fingerprintBulkSearch",
-      "matchContentRegex": null,
-      "matchContentXpath": null,
-      "matchContentValue": null,
-      "matchContentJson": null,
-      "pollingSchedule": null,
-      "tcpHost": null,
-      "tcpPort": null,
-      "autoRetryPeriodMinutes": 60,
-      "autoRetryEnabled": false,
-      "rewriteUrlsConfig": [],
-      "addAutoRewriteRules": true,
-      "rewriteUrls": false,
-      "status": "enabled",
-      "alerts": [],
-      "txRerunAcl": [],
-      "txViewFullAcl": [],
-      "txViewAcl": [],
-      "properties": [],
-      "matchContentTypes": [],
-      "routes": [
-        {
-          "name": "Fingerprint Bulk Search Route",
-          "secured": false,
-          "host": "localhost",
-          "port": 6000,
-          "path": "",
-          "pathTransform": "",
-          "primary": true,
-          "username": "",
-          "password": "",
-          "forwardAuthHeader": true,
-          "status": "enabled",
-          "type": "http"
-        }
-      ],
-      "authType": "private",
-      "whitelist": [],
-      "allow": [
-        "fingerprintRole"
-      ],
-      "type": "http"
 }, nationalFingerprint_channel = {
       "requestBody": true,
       "responseBody": true,
@@ -555,11 +445,5 @@ db.clients.insert(xds_client);
 db.channels.insert(xds_mediator_channel);
 
 db.channels.insert(openshr_xds_registry_channel);
-
-db.clients.insert(fingerprint_client);
-db.channels.insert(fingerprint_channel);
-
-db.clients.insert(fingerprintBulkSearch_client);
-db.channels.insert(fingerprintBulkSearch_channel);
 
 db.channels.insert(nationalFingerprint_channel);
