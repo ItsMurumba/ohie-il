@@ -489,6 +489,52 @@ var ilr_client = {
         "fingerprintRole"
       ],
       "type": "http"
+}, nationalFingerprint_channel = {
+      "requestBody": true,
+      "responseBody": true,
+      "name": "National Fingerprint Channel",
+      "urlPattern": "^/nfp$",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "National Fingerprint Server",
+          "secured": false,
+          "host": "$FINGERPRINT_HOST",
+          "port": 80,
+          "path": "/M2Sys.BioPluginWeb/BioPluginService.asmx",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "status": "enabled",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "fingerprintRole"
+      ],
+      "type": "http"
 };
 
 db.clients.insert(ilr_client);
@@ -515,3 +561,5 @@ db.channels.insert(fingerprint_channel);
 
 db.clients.insert(fingerprintBulkSearch_client);
 db.channels.insert(fingerprintBulkSearch_channel);
+
+db.channels.insert(nationalFingerprint_channel);
