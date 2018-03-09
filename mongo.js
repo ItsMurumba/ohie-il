@@ -409,7 +409,7 @@ var ilr_client = {
           "secured": false,
           "host": "$FINGERPRINT_HOST",
           "port": 80,
-          "path": "/M2Sys.BioPluginWeb/BioPluginService.asmx",
+          "path": "/M2Sys.BioPluginWeb/BioPluginServiceV8.asmx",
           "pathTransform": "",
           "primary": true,
           "username": "",
