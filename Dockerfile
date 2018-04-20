@@ -14,7 +14,7 @@ USER root
 RUN apt-get update
 RUN apt-get -y install wget
 RUN apt-get -y install curl
-RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN apt-get -y install nodejs
 RUN apt-get -y install git build-essential
 RUN apt-get -y install software-properties-common python-software-properties openjdk-7-jdk unzip
@@ -26,7 +26,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
 
 #install openhim
 
-RUN npm -y install -g openhim-core grunt
+RUN npm -y install -g openhim-core@4.0.3 grunt
 RUN mkdir /etc/openhim
 
 COPY default.json /etc/openhim/core.json
