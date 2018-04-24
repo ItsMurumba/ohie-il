@@ -4,12 +4,14 @@
 : ${IL_CERT_PATH=/var/openhim/server.crt}
 : ${IL_KEY_PATH=/var/openhim/server.key}
 : ${IL_PASSWORD=openhim-password}
-: ${SERVER_ADDRESS=ohie-ilr}
+: ${SERVER_NAME=ohie-ilr}
+: ${SERVER_TIMEOUT=120000}
 
 export IL_IMPORT_CERT
 export IL_CERT_PATH
 export IL_KEY_PATH
 export IL_PASSWORD
+export SERVER_TIMEOUT
 
 /utils/replace-vars /etc/openhim/core.json
 
@@ -26,6 +28,7 @@ mongo mongodb://mongodb/openhim /etc/openhim/mongo.js
 
 cd ~/openhim-mediator-openinfoman-dhis2-sync/
 /utils/replace-vars ./config/default.json
+/utils/replace-vars ./config/mediator.json
 node lib/server.js &
 
 cd ~/
