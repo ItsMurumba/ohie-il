@@ -252,7 +252,7 @@ var ilr_client = {
       "type": "http"
 },dhis_mediator_channel = {
 	"name": "OpenInfoMan-DHIS2 Sync",
-	"pollingSchedule": "30 * * * *",
+	"pollingSchedule": "0 0 * * 0",
 	"urlPattern": "^/_infomansync$",
 	"autoRetryPeriodMinutes": 60,
 	"autoRetryEnabled": false,
