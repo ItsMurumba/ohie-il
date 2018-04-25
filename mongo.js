@@ -33,7 +33,7 @@ var ilr_client = {
       "matchContentXpath": null,
       "matchContentRegex": null,
       "responseBody": true,
-      "requestBody": true,
+      "requestBody": false,
       "type": "http",
       "whitelist": [],
       "authType": "private",
@@ -336,7 +336,7 @@ var ilr_client = {
       "matchContentRegex": null    
 
 }, openshr_xds_registry_channel = {
-      "requestBody": true,
+      "requestBody": false,
       "responseBody": true,
       "name": "OpenSHR XDS Registry",
       "urlPattern": "^/SHRXDSRegistry$",
