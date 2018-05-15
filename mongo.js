@@ -295,7 +295,7 @@ var ilr_client = {
       ]
 }, xds_mediator_channel = {
       "name": "XDS.b Mediator",
-      "urlPattern": "^/(xds(registry|repository)|dsub)$",
+      "urlPattern": "^/xds(registry|repository)$",
       "autoRetryPeriodMinutes": 60,
       "autoRetryEnabled": false,
       "rewriteUrlsConfig": [],
@@ -334,6 +334,48 @@ var ilr_client = {
       "matchContentValue": null,
       "matchContentXpath": null,
       "matchContentRegex": null    
+
+}, xds_mediator_dsub_channel = {
+  "name": "XDS.b Mediator dsub",
+  "urlPattern": "^/dsub$",
+  "autoRetryPeriodMinutes": 60,
+  "autoRetryEnabled": false,
+  "rewriteUrlsConfig": [],
+  "addAutoRewriteRules": true,
+  "rewriteUrls": false,
+  "status": "enabled",
+  "alerts": [],
+  "txRerunAcl": [],
+  "txViewFullAcl": [],
+  "txViewAcl": [],
+  "properties": [],
+  "matchContentTypes": [],
+  "routes": [
+    {
+      "secured": false,
+      "primary": true,
+      "port": 8500,
+      "host": "localhost",
+      "name": "XDS.b Mediator dsub",
+      "forwardAuthHeader": true,
+      "status": "enabled",
+      "type": "http"
+    }
+  ],
+  "authType": "private",
+  "whitelist": [],
+  "allow": [
+    "xds",
+    "xdsRole"
+  ],
+  "type": "http",
+  "tcpPort": null,
+  "tcpHost": null,
+  "pollingSchedule": null,
+  "matchContentJson": null,
+  "matchContentValue": null,
+  "matchContentXpath": null,
+  "matchContentRegex": null    
 
 }, openshr_xds_registry_channel = {
       "requestBody": false,
