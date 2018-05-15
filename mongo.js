@@ -295,7 +295,7 @@ var ilr_client = {
       ]
 }, xds_mediator_channel = {
       "name": "XDS.b Mediator",
-      "urlPattern": "^/xds(registry|repository)$",
+      "urlPattern": "^/(xds(registry|repository)|dsub)$",
       "autoRetryPeriodMinutes": 60,
       "autoRetryEnabled": false,
       "rewriteUrlsConfig": [],
