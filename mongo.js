@@ -483,7 +483,6 @@ db.channels.insert(pdq_channel);
 
 db.channels.insert(dhis_mediator_channel);
 
-
 db.clients.insert(xds_client);
 db.channels.insert(xds_mediator_channel);
 db.channels.insert(xds_mediator_dsub_channel);
