@@ -553,7 +553,7 @@ db.channels.insert(xds_mediator_dsub_channel);
 
 db.channels.insert(openshr_xds_registry_channel);
 
-db.channels.insert(nationalFingerprint_client);
+db.clients.insert(nationalFingerprint_client);
 db.channels.insert(nationalFingerprint_channel);
 
 db.clients.insert(scc_client);
