@@ -333,7 +333,7 @@ var ilr_client = {
       "matchContentJson": null,
       "matchContentValue": null,
       "matchContentXpath": null,
-      "matchContentRegex": null    
+      "matchContentRegex": null
 
 }, xds_mediator_dsub_channel = {
       "name": "XDS.b Mediator dsub",
@@ -375,7 +375,7 @@ var ilr_client = {
       "matchContentJson": null,
       "matchContentValue": null,
       "matchContentXpath": null,
-      "matchContentRegex": null    
+      "matchContentRegex": null
 
 }, openshr_xds_registry_channel = {
       "requestBody": false,
@@ -421,6 +421,15 @@ var ilr_client = {
       "whitelist": [],
       "allow": [],
       "type": "http"
+}, nationalFingerprint_client = {
+      "clientID": "nationalFingerprintClient",
+      "name": "nationalFingerprintClient",
+      "passwordAlgorithm": "sha512",
+      "passwordSalt": "c84dadde8f7e3b26b7b4e671fcba7284",
+      "passwordHash": "6AC006FEDE10BFBC26070AC77F90453546564D49DA2197391E8C2870F73095AA17A98A4B5C041588C39E9C955506DFB1022001F983228AABE826A3E42D9242A9",
+      "roles": [
+        "fingerprintRole"
+      ]
 }, nationalFingerprint_channel = {
       "requestBody": true,
       "responseBody": true,
@@ -467,6 +476,61 @@ var ilr_client = {
         "fingerprintRole"
       ],
       "type": "http"
+}, scc_client = {
+      "clientID": "scc",
+      "name": "scc",
+      "passwordAlgorithm": "sha512",
+      "passwordSalt": "c84dadde8f7e3b26b7b4e671fcba7284",
+      "passwordHash": "F67FA8D9D06DDC46B8C58BC2046244DBCCA2EACFB2836E21E0E137A9474C56A88B26075CC783748DC6323E057DA6FF382579952AAA6B94AE1AEF0D67E3356FA3",
+      "roles": [
+        "sccRole"
+      ]
+}, scc_channel = {
+      "requestBody": true,
+      "responseBody": true,
+      "name": "SCC",
+      "urlPattern": "^/scc",
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "SCC Route",
+          "secured": false,
+          "host": "ohie-cr",
+          "port": 3600,
+          "path": "",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": true,
+          "status": "enabled",
+          "type": "mllp"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "sccRole"
+      ],
+      "type": "http"
 };
 
 db.clients.insert(ilr_client);
@@ -489,4 +553,8 @@ db.channels.insert(xds_mediator_dsub_channel);
 
 db.channels.insert(openshr_xds_registry_channel);
 
+db.channels.insert(nationalFingerprint_client);
 db.channels.insert(nationalFingerprint_channel);
+
+db.clients.insert(scc_client);
+db.channels.insert(scc_channel);

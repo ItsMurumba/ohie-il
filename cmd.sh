@@ -6,12 +6,14 @@
 : ${IL_PASSWORD=openhim-password}
 : ${SERVER_NAME=ohie-ilr}
 : ${SERVER_TIMEOUT=120000}
+: ${DHIS_ADMIN_PASSWORD=district}
 
 export IL_IMPORT_CERT
 export IL_CERT_PATH
 export IL_KEY_PATH
 export IL_PASSWORD
 export SERVER_TIMEOUT
+export DHIS_ADMIN_PASSWORD
 
 /utils/replace-vars /etc/openhim/core.json
 
