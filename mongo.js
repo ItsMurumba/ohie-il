@@ -425,8 +425,8 @@ var ilr_client = {
       "clientID": "nationalFingerprintClient",
       "name": "nationalFingerprintClient",
       "passwordAlgorithm": "sha512",
-      "passwordSalt": "c84dadde8f7e3b26b7b4e671fcba7284",
-      "passwordHash": "6AC006FEDE10BFBC26070AC77F90453546564D49DA2197391E8C2870F73095AA17A98A4B5C041588C39E9C955506DFB1022001F983228AABE826A3E42D9242A9",
+      "passwordSalt": "97d1a3d80060d94fcd1ffb311d88c516",
+      "passwordHash": "4cd9e878e35c2bbe88166c33fc84a38718045df9ec73331eea3f5e37a52027ee4c85a5eef58a058fe2e229b9ba7d45c2c7826bd7862b06b17c8c29a42370bf2d",
       "roles": [
         "fingerprintRole"
       ]
