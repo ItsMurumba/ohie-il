@@ -295,7 +295,7 @@ var ilr_client = {
       ]
 }, xds_mediator_channel = {
       "name": "XDS.b Mediator",
-      "urlPattern": "^/xds(registry|repository)$",
+      "urlPattern": "^/xds(registry|repository|brepository)$",
       "autoRetryPeriodMinutes": 60,
       "autoRetryEnabled": false,
       "rewriteUrlsConfig": [],
@@ -312,6 +312,8 @@ var ilr_client = {
         {
           "secured": false,
           "primary": true,
+          "pathTransform": "s/xdsbrepository/xdsrepository/g",
+          "path": "",
           "port": 8500,
           "host": "localhost",
           "name": "XDS.b Mediator",
