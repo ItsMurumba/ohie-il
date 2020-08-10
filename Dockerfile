@@ -33,8 +33,8 @@ COPY default.json /etc/openhim/core.json
 COPY mongo.js /etc/openhim/mongo.js
 COPY dhis-mediator-config.json /etc/openhim/default.json
 COPY openhim-ilr-dhis-mediator.json /etc/openhim/mediator.json
-COPY mediator-xds-1.0.3-jar-with-dependencies.jar /root/mediator-xds-1.0.3-jar-with-dependencies.jar
-
+#COPY mediator-xds-1.0.3-jar-with-dependencies.jar /root/mediator-xds-1.0.3-jar-with-dependencies.jar
+COPY mediator-xds-1.0.4-SNAPSHOT-jar-with-dependencies.jar  /root/mediator-xds-1.0.4-SNAPSHOT-jar-with-dependencies.jar 
 #install mediators
 
 COPY InstallCert.java.zip /root/InstallCert.java.zip
