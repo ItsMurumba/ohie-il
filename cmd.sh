@@ -36,4 +36,5 @@ node lib/server.js &
 cd ~/
 echo "1" | java InstallCert localhost:8080
 cp jssecacerts /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security
-java -jar mediator-xds-1.0.3-jar-with-dependencies.jar --conf mediator.properties
+#java -jar mediator-xds-1.0.3-jar-with-dependencies.jar --conf mediator.properties
+java -jar mediator-xds-1.0.4-SNAPSHOT-jar-with-dependencies.jar --conf mediator.properties
